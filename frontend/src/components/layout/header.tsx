@@ -16,12 +16,12 @@ export default function Header() {
         <a href="http://localhost:3000" className="text-white font-semibold">
           Home
         </a>
-        {loggedIn === true && (
+        {loggedIn === false && (
           <a href="/api/auth/login" className="text-white font-semibold">
             Login
           </a>
         )}
-        {loggedIn === false && (
+        {loggedIn === true && (
           <a href="/api/auth/logout" className="text-white font-semibold">
             Logout
           </a>
