@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { UserProvider } from "@auth0/nextjs-auth0/client";
 import Header from "../components/layout/header";
 export const metadata: Metadata = {
   title: "LazyCook",
@@ -11,12 +12,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const here = false;
   return (
     <html lang="en">
-      <body>
-        <Header />
-        {children}
-      </body>
+      <UserProvider>
+        <body>
+          {Header(here)}
+          {children}
+        </body>
+      </UserProvider>
     </html>
   );
 }
