@@ -1,13 +1,8 @@
-"use client";
-import { Button } from "@mui/material";
-import { IoIosMenu } from "react-icons/io";
-import { useState } from "react";
-export default function Header() {
-  const [open, setOpen] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
-  const toggleDrawer = (newOpen: boolean) => () => {
-    setOpen(newOpen);
-  };
+import { checkIfUser } from "../../components/network/checkIfUser";
+import { Sidebar, SidebarLoggedIn } from "./sidebar";
+import { ifUserThenMail } from "../../components/network/ifUserThenMail";
+export default async function Header() {
+  const loggedIn = await checkIfUser();
   return (
     <div className="flex items-center justify-around h-16 bg-black w-full sticky">
       <h1 className="text-3xl font-bold text-white">LazyCook</h1>
@@ -28,9 +23,7 @@ export default function Header() {
         )}
       </div>
       {/* this is the sidebar for login and logout for mobile*/}
-      <Button className="flex md:hidden">
-        <IoIosMenu color="white" size={30} />
-      </Button>
+      {loggedIn ? <Sidebar /> : <SidebarLoggedIn />}
     </div>
   );
 }
