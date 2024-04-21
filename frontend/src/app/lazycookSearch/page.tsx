@@ -88,7 +88,26 @@ export default function LazyCookSearch() {
               </label>
             </div>
           </div>
-          <div className="flex justify-center flex-wrap w-full h-[85%]">
+          <div className="flex justify-center flex-wrap w-full h-[85%] gap-[3%] overflow-auto py-[3%]">
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
             <FoodCard />
             <FoodCard />
             <FoodCard />
