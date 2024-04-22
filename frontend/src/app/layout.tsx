@@ -13,12 +13,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
+      <body>
+        {/* <Header /> */}
+        {children}
+      </body>
+
       <UserProvider>
         <body>
           <Header />
           {children}
         </body>
       </UserProvider>
+
     </html>
   );
 }
