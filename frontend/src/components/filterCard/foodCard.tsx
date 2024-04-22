@@ -5,11 +5,7 @@ export const FoodCard = () => {
     <>
       <div className="flex justify-between w-[45%] h-[12%] shadow-lg ">
         <div className="h-full">
-          <img
-            src="vegetables.jpg"
-            alt=""
-            className="rounded-lg w-[100%] h-full"
-          />
+          <img src="rice.jpg" alt="" className="rounded-lg w-[100%] h-full" />
         </div>
         <div>
           <div className="text-[21px] font-light">Grilled Top Blade Steaks</div>
