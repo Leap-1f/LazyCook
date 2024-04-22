@@ -3,11 +3,13 @@ import { PiListBold } from "react-icons/pi";
 import { IngredientsCard } from "@/src/components/filterCard/IngredientsCard";
 import { FaRegUser } from "react-icons/fa";
 import { FoodCard } from "@/src/components/filterCard/foodCard";
+import { Drawer, Button } from "@mui/material";
+import { MobileIngredientSelect } from "@/src/components/layout/mobileIngredientSelect";
 export default function LazyCookSearch() {
   return (
     <>
       <div className="flex h-screen">
-        <div className="flex flex-col w-[30%] h-full ">
+        <div className=" flex-col w-[30%] h-full sm:flex hidden">
           <div className="flex flex-col gap-[20%] h-[15%] bg-slate-800 p-[3%]">
             <div className="flex justify-between text-white">
               <div className="flex justify-center items-center">
@@ -42,7 +44,7 @@ export default function LazyCookSearch() {
               </label>
             </div>
           </div>
-          <div className="flex flex-col items-center h-[85%] rounded-lg overflow-auto">
+          <div className="flex-col items-center h-[85%] rounded-lg overflow-auto flex">
             <IngredientsCard
               title={"Nogoo"}
               ingNumber={0}
@@ -64,10 +66,12 @@ export default function LazyCookSearch() {
           </div>
         </div>
         <div className="w-[1%] bg-slate-600"></div>
-        <div className="w-[69%] h-full ">
-          <div className="flex flex-col gap-[20%] h-[15%] bg-slate-800 p-[1%]">
+        <div className="sm:w-[69%] w-full h-full ">
+          <div className="flex flex-col gap-[10%] md:gap-[20%] h-[15%] bg-slate-800 p-[1%]">
             <div className="flex justify-between text-white">
-              <div></div>
+              <div className="flex justify-center items-center ">
+                <MobileIngredientSelect />
+              </div>
               <div className=" text-center">
                 <div className=" text-[25px]">Aguulah</div>
                 <div className=" font-thin">Tand {5} hoolnii orts bn</div>
@@ -96,7 +100,7 @@ export default function LazyCookSearch() {
               </label>
             </div>
           </div>
-          <div className="flex justify-center flex-wrap w-full h-[85%] gap-[3%] overflow-auto py-[3%]">
+          <div className="flex justify-center flex-wrap w-full h-[85%] gap-[3%] overflow-auto py-[3%] ">
             <FoodCard />
             <FoodCard />
             <FoodCard />
