@@ -1,6 +1,7 @@
 import { checkIfUser } from "../../components/network/checkIfUser";
 import { Sidebar, SidebarLoggedIn } from "./sidebar";
 import { ifUserThenMail } from "../../components/network/ifUserThenMail";
+import { Img } from "@chakra-ui/react";
 export default async function Header() {
   const loggedIn = await checkIfUser();
   return (
