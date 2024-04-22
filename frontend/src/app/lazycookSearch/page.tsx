@@ -43,13 +43,21 @@ export default function LazyCookSearch() {
             </div>
           </div>
           <div className="flex flex-col items-center h-[85%] rounded-lg overflow-auto">
-            <IngredientsCard title={"Nogoo"} ingNumber={0} img="" />
+            <IngredientsCard
+              title={"Nogoo"}
+              ingNumber={0}
+              img={"vegetables.svg"}
+            />
             <IngredientsCard
               title={"Mahan buteegdehuun"}
               ingNumber={0}
-              img=""
+              img={"meat.svg"}
             />
-            <IngredientsCard title={"Taria"} ingNumber={0} img="" />
+            <IngredientsCard
+              title={"Taria"}
+              ingNumber={0}
+              img={"vegetables.svg"}
+            />
             <IngredientsCard title={"Pantry Essentials"} ingNumber={0} img="" />
             <IngredientsCard title={"Pantry Essentials"} ingNumber={0} img="" />
             <IngredientsCard title={"Pantry Essentials"} ingNumber={0} img="" />

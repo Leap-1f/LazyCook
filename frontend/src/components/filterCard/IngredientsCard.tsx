@@ -12,7 +12,7 @@ export const IngredientsCard = ({
   return (
     <div className="h-fit w-[90%] border-[3px] shadow-lg rounded-lg mt-[3%]">
       <div className="flex justify-between w-full h-[30%]">
-        <img src={img} alt="" className=" rounded-lg" />
+        <img src={img} alt="" className=" rounded-lg ml-[10%]" />
         <div className="flex flex-col justify-center items-center">
           <div className=" font-light text-[19px]">{title}</div>
           <div className=" text-gray-400 text-[23px]">
