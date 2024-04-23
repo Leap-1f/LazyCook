@@ -1,6 +1,5 @@
 import { checkIfUser } from "../../components/network/checkIfUser";
 import { Sidebar, SidebarLoggedIn } from "./sidebar";
-import { ifUserThenMail } from "../../components/network/ifUserThenMail";
 export default async function Header() {
   const loggedIn = await checkIfUser();
   return (

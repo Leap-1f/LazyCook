@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "LazyCook",
   description: "The laziest cookbook.",
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
