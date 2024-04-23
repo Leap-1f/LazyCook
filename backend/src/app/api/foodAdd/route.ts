@@ -1,8 +1,5 @@
-export async function POST(request: Request) {
-  const { name, price, description, image } = await request.json();
-  return new Response(JSON.stringify({ name, price, description, image }), {
-    headers: {
-      "content-type": "application/json",
-    },
-  });
-}
+import { NextRequest, NextResponse } from "next/server";
+import { connectToDatabase } from "../database";
+export const GET = async (req: NextRequest, res: NextResponse) => {
+  return NextResponse.json({ name: "Bayaraa" });
+};
