@@ -6,40 +6,59 @@ import { BsThreeDots } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
 import { FaCheck } from "react-icons/fa6";
 import { useState } from "react";
-export function MobileIngredientSelect(
-  img: string,
+export function DetailedViewSidebar(
   name: string,
+  ingredients: { name: string; have: boolean }[],
+  nutrition: { name: string; value: string }[],
   haveAll: boolean,
   missing: number,
-  ingredients: string[],
-  nutrition: string[]
+  imgUrl: string,
+  isCollapsed: boolean,
+  toggleSidebarcollapse: any
 ) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-  function toggleSidebarcollapse() {
-    setIsCollapsed((prev) => !prev);
-  }
+  // to use this sidebar, you need to mark the parent as "use client"
+  // mock data here V
+  // const allInOne = {
+  //   imgUrl: "./rice.jpg",
+  //   name: "rice",
+  //   ingredients: [
+  //     { name: "rice", have: true },
+  //     { name: "water", have: true },
+  //   ],
+  //   nutrition: [
+  //     { name: "carbs", value: "10mg" },
+  //     { name: "protein", value: "10mg" },
+  //   ],
+  //   haveAll: true,
+  //   missing: 0,
+  // };
+  // const [isCollapsed, setIsCollapsed] = useState(false);
+  // function toggleSidebarcollapse() {
+  //   setIsCollapsed((prev) => !prev);
+  // }
+  // add the object to the function
   const newObj: any = ingredients;
   const DrawerList = (
-    <Box sx={{ width: 250 }} role="presentation">
-      <div className="flex flex-col overflow-scroll gap-12">
-        <img src={img} alt="" className="w-[100%] h-[100%] object-cover" />
-        <div className="flex flex-row space-around mx-6">
+    <Box sx={{ width: 300 }} role="presentation">
+      <div className="flex flex-col overflow-scroll gap-12 h-[100vh] bg-black text-white">
+        <img src={imgUrl} alt="" className="w-[100%] h-[20vh] object-cover" />
+        <div className="flex flex-row justify-between mx-5 absolute top-3 w-[90%]">
           <button
             onClick={toggleSidebarcollapse}
-            className="flex justify-center items-center rounded-full bg-white p-[3px] hover:bg-gray-200"
+            className="flex justify-center items-center rounded-full bg-black p-[3px] hover:bg-gray-200"
           >
-            <IoClose className="w-[30px] h-[30px]" />
+            <IoClose className="w-[30px] h-[30px]" color="white" />
           </button>
           {/* TODO: add drop down to report a problem */}
-          <button className="flex justify-center items-center rounded-full bg-white p-[3px] hover:bg-gray-200">
-            <BsThreeDots className="w-[30px] h-[30px]" />
+          <button className="flex justify-center items-center rounded-full bg-black p-[3px] hover:bg-gray-200">
+            <BsThreeDots className="w-[30px] h-[30px]" color="white" />
           </button>
         </div>
-        <div className="w-[80%] flex flex-col h-[10%]">
+        <div className="w-[80%] flex flex-col h-[10%] justify-center itesm-center shadow-md rounded-md p-3 border-2 border-gray-200 mx-5 relative bottom-24 bg-black text-white">
           <div className="flex justify-between items-center flex-row">
-            <h1>{name}</h1>
+            <h1 className="text-2xl">{name}</h1>
             <button>
-              <CiHeart />
+              <CiHeart height={30} width={30} />
             </button>
           </div>
           <h1>
@@ -48,7 +67,8 @@ export function MobileIngredientSelect(
               : `Missing ${missing} ingredients`}
           </h1>
         </div>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 mx-5 rounded-lg">
+          <h1 className="text-xl">Ingredients</h1>
           {newObj.map((ingredient: any, index: number) => (
             <div className="flex flex-row justify-between" key={index}>
               <h1>{ingredient.name}</h1>
@@ -60,8 +80,8 @@ export function MobileIngredientSelect(
             </div>
           ))}
         </div>
-        <div className="flex flex-col">
-          <h1>Nutrition</h1>
+        <div className="flex flex-col gap-3 mx-5 ">
+          <h1 className="text-xl">Nutrition per 100g.</h1>
           <div className="flex flex-col gap-6">
             {nutrition.map((nutrient: any, index: number) => (
               <div className="flex flex-row justify-between" key={index}>
@@ -76,14 +96,11 @@ export function MobileIngredientSelect(
   );
 
   return (
-    <div className="flex sm:hidden">
-      <Button onClick={toggleSidebarcollapse}>
-        <IoIosMenu color="white" size={30} />
-      </Button>
+    <div className="flex">
       <Drawer
         open={isCollapsed}
         onClose={toggleSidebarcollapse}
-        anchor="left"
+        anchor="right"
         variant="persistent"
       >
         {DrawerList}
