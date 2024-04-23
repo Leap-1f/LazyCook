@@ -8,7 +8,7 @@ export default async function Header() {
         <h1 className="text-3xl font-bold text-white">LazyCook</h1>
         {/* this is the link list */}
         <div className=" items-center justify-center gap-5 hidden md:flex">
-          <a href="http://localhost:3000" className="text-white font-semibold">
+          <a href="/" className="text-white font-semibold">
             Home
           </a>
           {loggedIn ? (
