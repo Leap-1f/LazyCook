@@ -11,14 +11,13 @@ export default async function Header() {
           <a href="http://localhost:3000" className="text-white font-semibold">
             Home
           </a>
-          {loggedIn === false && (
-            <a href="/api/auth/login" className="text-white font-semibold">
-              Login
-            </a>
-          )}
-          {loggedIn === true && (
+          {loggedIn ? (
             <a href="/api/auth/logout" className="text-white font-semibold">
               Logout
+            </a>
+          ) : (
+            <a href="/api/auth/login" className="text-white font-semibold">
+              Login
             </a>
           )}
         </div>
