@@ -9,15 +9,17 @@ export const Carousel = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="flex flex-col justify-center pl-[30%]"
+        className="flex flex-col justify-center items-center "
       >
-        <h1 className="text-white font-black text-5xl pb-10">
-          HIGH QUALITY SPICES <br /> FOR YOUR DISH
-        </h1>
-        <p className="text-white text-2xl font-medium">
-          Only the highest quality varients are collected from <br /> the best
-          plantations in the wold
-        </p>
+        <div className="container justify-center">
+          <h1 className="text-white font-black text-5xl pb-10">
+            HIGH QUALITY SPICES <br /> FOR YOUR DISH
+          </h1>
+          <p className="text-white text-2xl font-medium">
+            Only the highest quality varients are collected from <br /> the best
+            plantations in the wold
+          </p>
+        </div>
       </div>
     </>
   );
