@@ -5,7 +5,7 @@ import { FaLocationDot } from "react-icons/fa6";
 export const Footer = () => {
   return (
     <>
-      <div className=" bg-stone-700 flex items-center flex-col p-[100px]">
+      <div className=" bg-stone-700 flex items-center flex-col p-[100px] ">
         <img src="" alt="" />
         <div className="flex pb-3 text-stone-400 items-center gap-2">
           <FaLocationDot />
