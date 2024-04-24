@@ -1,31 +1,23 @@
-import mongoose from "mongoose";
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "../database";
-const userSchema = new mongoose.Schema({
-  email: { type: String, required: true, unique: true },
-  nickname: { type: String, required: true },
-});
+import { UserModel } from "../models/user.model";
 
-const User = mongoose.model("User", userSchema);
-
-const getByEmail = async (email: string) => {
+export const GET = async (req: NextRequest, res: NextResponse) => {
   try {
-    await mongoose.connect("mongodb://user:pass@mymongoserver.com/db-name");
-
-    const user = await User.findOne({ email });
-
+    await connectToDatabase();
+    const userId = "77cNLpn09VM5IoolbvrMm1EKJHAJsNlj";
+    const user = await UserModel.findOne({ client_id: userId });
     if (!user) {
-      return null;
+      return NextResponse.json({ message: "User not found" }, { status: 404 });
     }
+    console.log("Fetched user:", user);
+    return NextResponse.json({ userData: user }, { status: 200 });
+  } catch (error) {
+    console.error("Error handling GET request:", error);
 
-    return {
-      user_id: user._id.toString(),
-      nickname: user.nickname,
-      email: user.email,
-    };
-  } catch (err) {
-    throw err;
-  } finally {
-    mongoose.connection.close();
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
   }
 };
