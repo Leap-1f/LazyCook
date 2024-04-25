@@ -2,8 +2,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 
-const DATABASE_URI =
-  "mongodb+srv://zedv:zed@foodapp.pk3ugl6.mongodb.net/db-name";
+const DATABASE_URI = process.env.DATABASE_URL!;
 
 export const connectToDatabase = async () => {
   try {
