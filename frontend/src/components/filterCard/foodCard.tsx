@@ -1,3 +1,4 @@
+"use client";
 import { CiHeart } from "react-icons/ci";
 import { FaExternalLinkAlt } from "react-icons/fa";
 const FoodCard = (dude: any) => {

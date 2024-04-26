@@ -1,9 +1,9 @@
-import { AboutUs } from "../components/HomePage/AboiutUs";
+import { AboutUs } from "../components/HomePage/AboutUs";
 import { Carousel } from "../components/HomePage/Carousel";
 import { Footer } from "../components/HomePage/Footer";
 import { Reviews } from "../components/HomePage/Reviews";
 import { SiteMap } from "../components/HomePage/SiteMap";
-import { Reee } from "../components/HomePage/test";
+import { Reee } from "../components/HomePage/Test";
 
 export default function Home() {
   return (

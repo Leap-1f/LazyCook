@@ -1,3 +1,4 @@
+"use client";
 export const AboutUs = () => {
   return (
     <>
@@ -6,13 +7,15 @@ export const AboutUs = () => {
           backgroundImage: "url(4k.avif)",
           height: "100vh",
           backgroundSize: "cover",
+          backgroundAttachment: "fixed",
+          backgroundPosition: "center",
         }}
         className=" flex justify-center"
       >
         <div className="container flex flex-col justify-center gap-10">
-          <div className="flex justify-between">
+          <div className="flex justify-between  ">
             <h1 className=" text-lime-700 text-5xl font-medium">About</h1>
-            <div className="  md:w-[50%] lg:w-[60%] 2xl:w-[40%] bg-black bg-opacity-50 border-[1px] p-[40px] border-white rounded-[10px]  *:text-white ">
+            <div className="sm:w-[80%] md:w-[70%] lg:w-[60%] 2xl:w-[40%] bg-black bg-opacity-50 border-[1px] p-[40px] border-white rounded-[10px]  *:text-white ">
               <h1 className="pb-[20px] text-[26px] font-semibold">PROJECT</h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
@@ -22,7 +25,7 @@ export const AboutUs = () => {
               </p>
             </div>
           </div>
-          <div className=" md:w-[50%] lg:w-[60%] 2xl:w-[40%] bg-black bg-opacity-50 border-[1px] p-[40px] border-white rounded-[10px]  *:text-white ">
+          <div className="sm:w-[80%] md:w-[70%] lg:w-[60%] 2xl:w-[40%] bg-black bg-opacity-50 border-[1px] p-[40px] border-white rounded-[10px]  *:text-white ">
             <h1 className="pb-[20px] text-[26px] font-semibold">GOAL</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
@@ -33,7 +36,7 @@ export const AboutUs = () => {
           </div>
           <div className="flex justify-between">
             <div></div>
-            <div className=" md:w-[50%] lg:w-[60%] 2xl:w-[40%] bg-black bg-opacity-50 border-[1px] p-[40px] border-white rounded-[10px]  *:text-white ">
+            <div className="sm:w-[80%] md:w-[70%] lg:w-[60%] 2xl:w-[40%] bg-black bg-opacity-50 border-[1px] p-[40px] border-white rounded-[10px]  *:text-white ">
               <h1 className="pb-[20px] text-[26px] font-semibold">SOLUTION</h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui

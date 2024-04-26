@@ -10,11 +10,9 @@ type Slide = {
 
 export const Reee = () => {
   const slides: Slide[] = [
-    { id: 1, src: "/4k.avif" },
+    { id: 1, src: "/cake.avif" },
     { id: 2, src: "/4k.avif" },
     { id: 3, src: "/4k.avif" },
-    { id: 4, src: "/4k.avif" },
-    { id: 5, src: "/4k.avif" },
   ];
 
   const [curr, setCurr] = useState(0);
@@ -54,7 +52,7 @@ export const Reee = () => {
           {slides.map((slide) => (
             <div
               key={slide.id}
-              className="w-[100vw] h-[100vh] bg-cover"
+              className="w-[100vw] h-[100vh] bg-cover "
               style={{
                 backgroundImage: `url(${slide.src})`,
               }}
@@ -71,7 +69,7 @@ export const Reee = () => {
               <div
                 key={i}
                 className={`transition-all w-3 h-3 rounded-full bg-white ${
-                  curr === i ? "p-4" : "bg-opacity-50"
+                  curr === i ? "p-0" : "bg-opacity-50"
                 }`}
               ></div>
             ))}
