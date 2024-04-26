@@ -1,12 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "../database";
-
+import { FoodModel } from "../models/food.model";
 export const POST = async (req: NextRequest, res: NextResponse) => {
   try {
     await connectToDatabase();
-    const { name } = await req.json();
+    const food = await FoodModel.create({
+      title: req.body,
+      ingredients: req.body,
+      description: req.body,
+      instructions: req.body,
+      image: req.body,
+      prepTime: req.body,
+      cookTime: req.body,
+      totalTime: req.body,
+    });
     return NextResponse.json({
-      message: `${name}`,
+      message: `Food added successfully:${food}`,
     });
   } catch (error) {
     console.error("Error POST request:", error);

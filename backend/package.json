@@ -14,10 +14,12 @@
     "dotenv": "^16.4.5",
     "mongoose": "^8.3.2",
     "next": "14.2.2",
+    "nextjs-cors": "^2.2.0",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
