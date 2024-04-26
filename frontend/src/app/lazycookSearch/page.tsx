@@ -6,7 +6,7 @@ import { FaRegUser } from "react-icons/fa";
 import FoodCard from "@/src/components/filterCard/foodCard";
 import { MobileIngredientSelect } from "@/src/components/layout/mobileIngredientSelect";
 import DetailedViewSidebar from "@/src/components/layout/detailedViewSidebar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 export default function LazyCookSearch() {
   const [current, setCurrent] = useState({
     imgUrl: "./rice.jpg",
