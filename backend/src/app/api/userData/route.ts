@@ -5,8 +5,8 @@ import { UserModel } from "../models/user.model";
 export const GET = async (req: NextRequest, res: NextResponse) => {
   try {
     await connectToDatabase();
-    const userId = "77cNLpn09VM5IoolbvrMm1EKJHAJsNlj";
-    const user = await UserModel.findOne({ client_id: userId });
+    const email = "bayaradmin@gmail.com";
+    const user = await UserModel.findOne({ email: email });
     if (!user) {
       return NextResponse.json({ message: "User not found" }, { status: 404 });
     }

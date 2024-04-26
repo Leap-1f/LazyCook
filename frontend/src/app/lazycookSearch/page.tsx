@@ -63,7 +63,28 @@ export default function LazyCookSearch() {
   function toggleSidebarcollapse() {
     setIsCollapsed((prev) => !prev);
   }
+  const fetchUserData = async () => {
+    try {
+      const res = await fetch("http://localhost:3001/api/userData", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (!res.ok) {
+        throw new Error(`API request failed with status: ${res.status}`);
+      }
+      const userData = await res.json();
+      console.log("User data:", userData);
+      return userData;
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+  };
 
+  useEffect(() => {
+    fetchUserData();
+  }, []);
   return (
     <>
       <div className="flex h-screen">
