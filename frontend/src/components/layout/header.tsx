@@ -1,6 +1,5 @@
 import { checkIfUser } from "../../components/network/checkIfUser";
 import { Sidebar, SidebarLoggedIn } from "./sidebar";
-import { ifUserThenMail } from "../../components/network/ifUserThenMail";
 export default async function Header() {
   const loggedIn = await checkIfUser();
   return (
@@ -9,17 +8,16 @@ export default async function Header() {
         <h1 className="text-3xl font-bold text-white">LazyCook</h1>
         {/* this is the link list */}
         <div className=" items-center justify-center gap-5 hidden md:flex">
-          <a href="http://localhost:3000" className="text-white font-semibold">
+          <a href="/" className="text-white font-semibold">
             Home
           </a>
-          {loggedIn === false && (
-            <a href="/api/auth/login" className="text-white font-semibold">
-              Login
-            </a>
-          )}
-          {loggedIn === true && (
+          {loggedIn ? (
             <a href="/api/auth/logout" className="text-white font-semibold">
               Logout
+            </a>
+          ) : (
+            <a href="/api/auth/login" className="text-white font-semibold">
+              Login
             </a>
           )}
         </div>
