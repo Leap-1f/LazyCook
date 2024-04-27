@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 
 export const SiteMap = () => {
@@ -8,15 +9,16 @@ export const SiteMap = () => {
           backgroundImage: "url(carrot.avif)",
           height: "100vh",
           backgroundSize: "cover",
+          backgroundAttachment: "fixed",
         }}
         className="flex justify-center"
       >
-        <div className="container py-[100px]">
+        <div className="container py-[100px]   ">
           <h1 className=" text-lime-700 text-5xl font-medium pb-[100px]">
             Sitemap
           </h1>
-          <div className=" *:text-white flex justify-center ">
-            <div className="py-[10px] px-[20px] border-[1px] border-white rounded-[10px] inline-block">
+          <div className=" *:text-white flex justify-center  ">
+            <div className=" py-[10px] px-[20px] border-[1px] border-white rounded-[10px] inline-block">
               <p>Home</p>
             </div>
             <div className="py-[10px] px-[20px] border-[1px] border-white rounded-[10px] inline-block">

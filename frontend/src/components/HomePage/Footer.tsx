@@ -1,3 +1,4 @@
+"use client";
 import { FaPhone } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
 import { IoLogoYoutube } from "react-icons/io";
